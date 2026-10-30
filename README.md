@@ -54,8 +54,11 @@ npm run dev                  # http://localhost:3000
 ## O que está pronto (banco + regras, testado)
 Organizações isoladas por RLS · painel Master (barbearias, planos, módulos por barbearia com 3 camadas, teste grátis, suspensão, auditoria) · barbeiros · agenda sem conflito (inclusive reservas simultâneas) · retorno automático de clientes e remarketing com consentimento · comissões com precedência e snapshot · prateleira, estoque e vendas · financeiro · assinaturas de clientes · relatório mensal · calculadora de preço · fotos de serviços (bucket `shop-media`).
 
+## Telas da barbearia já prontas (`/app/<id>`)
+Menu por módulo ativo · **Serviços** (preço, duração, custo, comissão, fotos dos cortes) · **Barbeiros e comissões** (vínculo com serviços, comissão por barbeiro/serviço, pagamento) · **Clientes** (retorno automático, status, remarketing por WhatsApp só com consentimento) · **Agenda** (dia a dia, novo agendamento, confirmar/iniciar/concluir/faltou/cancelar). Estas telas foram verificadas por typecheck e build, mas **ainda não foram exercitadas contra um Supabase real**: teste cada fluxo após o deploy.
+
 ## O que ainda falta (seja realista antes de vender)
-- **Telas da barbearia** para agenda, clientes, serviços (upload de fotos), barbeiros/comissões, prateleira/estoque, financeiro, relatórios, assinaturas e calculadora. O banco e as regras existem e estão testados; a interface ainda não.
+- **Telas** de prateleira/estoque, financeiro, relatórios mensais, assinaturas de clientes e calculadora de preço (o banco e a calculadora já existem e estão testados).
 - Página pública de agendamento, upsell, automações/envio de mensagens, cobrança recorrente real do SaaS (provedor + webhook), horário de funcionamento na reserva, convite de funcionários por e-mail, documentação de LGPD/backup.
 - Nada foi testado contra um projeto Supabase hospedado; os testes usam um stub mínimo do Auth. Faça um teste de ponta a ponta após o primeiro deploy.
 

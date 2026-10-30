@@ -36,10 +36,11 @@ export default async function AppHome({ searchParams }: { searchParams: Promise<
       <ul className="grid gap-4 md:grid-cols-2">
         {shops.map(({ org, role, modules }) => (
           <li key={org.id} className="card p-5">
-            <div className="flex items-baseline justify-between"><h2 className="font-semibold">{org.name}</h2><span className="text-xs text-muted">{role}</span></div>
+            <div className="flex items-baseline justify-between"><h2 className="font-semibold"><a className="underline-offset-2 hover:underline" href={`/app/${org.id}`}>{org.name}</a></h2><span className="text-xs text-muted">{role}</span></div>
             <p className="mt-1 text-xs text-muted">/{org.slug} · {org.status}</p>
             <p className="mt-4 text-xs text-muted">Módulos ativos</p>
             <p className="mt-1 text-sm">{modules.length ? modules.map((k) => LABEL[k] ?? k).join(", ") : "Nenhum módulo ativo."}</p>
+            <a className="btn mt-4 inline-block" href={`/app/${org.id}`}>Abrir</a>
           </li>
         ))}
       </ul>
